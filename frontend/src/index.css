@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #ecfeff;
+  --color-primary-100: #cffafe;
+  --color-primary-200: #a5f3fc;
+  --color-primary-300: #67e8f9;
+  --color-primary-400: #22d3ee;
+  --color-primary-500: #06b6d4;
+  --color-primary-600: #0891b2;
+  --color-primary-700: #0e7490;
+  --color-primary-800: #155e75;
+  --color-primary-900: #164e63;
+
+  --color-dark-50: #f8fafc;
+  --color-dark-100: #f1f5f9;
+  --color-dark-200: #e2e8f0;
+  --color-dark-300: #cbd5e1;
+  --color-dark-400: #94a3b8;
+  --color-dark-500: #64748b;
+  --color-dark-600: #475569;
+  --color-dark-700: #334155;
+  --color-dark-800: #1e293b;
+  --color-dark-900: #0f172a;
+  --color-dark-950: #020617;
+
+  --font-sans: 'Inter', 'system-ui', 'sans-serif';
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased selection:bg-cyan-200 selection:text-cyan-950 overflow-x-hidden;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-colors;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgb(226 232 240);
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.06);
+}
+
+.glassmorphism-light {
+  background: rgba(248, 250, 252, 0.92);
+  border: 1px solid rgb(226 232 240);
+}
+
+.text-gradient {
+  @apply text-cyan-700;
+}
+
+.text-gradient-purple-amber {
+  @apply text-cyan-700;
+}
+
+.btn-primary {
+  @apply bg-cyan-700 hover:bg-cyan-800 text-white font-semibold px-5 py-2.5 rounded-lg transition-colors duration-200 active:scale-95 shadow-sm;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-slate-50 border border-slate-300 text-slate-800 font-semibold px-5 py-2.5 rounded-lg transition-colors duration-200 active:scale-95 shadow-sm;
+}
+
+.glow-card {
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glow-card:hover {
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.1);
+}
+
+/* Legacy dark-theme class compatibility for screens not yet component-refactored. */
+.bg-dark-950,
+.bg-dark-900,
+.bg-dark-850,
+.bg-dark-800,
+.bg-dark-750 {
+  background-color: #ffffff !important;
+}
+
+.hover\:bg-dark-900\/30:hover,
+.hover\:bg-dark-800:hover,
+.hover\:bg-dark-700:hover {
+  background-color: #f8fafc !important;
+}
+
+.border-dark-850,
+.border-dark-800,
+.border-dark-750,
+.border-dark-700 {
+  border-color: #e2e8f0 !important;
+}
+
+.divide-dark-800\/60 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #e2e8f0 !important;
+}
+
+.text-slate-100,
+.text-slate-200 {
+  color: #0f172a !important;
+}
+
+.text-slate-300,
+.text-slate-350,
+.text-slate-400,
+.text-slate-405,
+.text-slate-450,
+.text-slate-500,
+.text-slate-550 {
+  color: #64748b !important;
+}
+
+.text-purple-300,
+.text-purple-400,
+.text-purple-450,
+.hover\:text-purple-300:hover,
+.hover\:text-purple-400:hover,
+.hover\:text-purple-450:hover {
+  color: #0e7490 !important;
+}
+
+.bg-purple-600,
+.hover\:bg-purple-600:hover {
+  background-color: #0e7490 !important;
+}
+
+.bg-purple-500\/10,
+.bg-purple-600\/10,
+.bg-purple-950\/20,
+.bg-purple-950\/40,
+.hover\:bg-purple-950\/40:hover {
+  background-color: #ecfeff !important;
+}
+
+.border-purple-500\/20,
+.border-purple-500\/30,
+.border-purple-500\/35,
+.border-purple-550\/20,
+.hover\:border-purple-500:hover,
+.hover\:border-purple-500\/35:hover {
+  border-color: #a5f3fc !important;
+}

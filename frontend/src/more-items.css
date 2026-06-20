@@ -1,0 +1,268 @@
+/* More ShopEZ visual items and reusable epic UI effects. */
+
+.premium-shell {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(236, 254, 255, 0.78)),
+    radial-gradient(circle at top left, rgba(6, 182, 212, 0.18), transparent 26rem);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.1);
+  backdrop-filter: blur(18px);
+}
+
+.premium-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(14, 116, 144, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 116, 144, 0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: linear-gradient(to bottom, black, transparent 82%);
+}
+
+.floating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(103, 232, 249, 0.65);
+  background: rgba(236, 254, 255, 0.86);
+  color: #155e75;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  box-shadow: 0 12px 26px rgba(14, 116, 144, 0.12);
+}
+
+.sale-ribbon {
+  position: absolute;
+  top: 1rem;
+  right: -2.7rem;
+  z-index: 3;
+  width: 9rem;
+  transform: rotate(35deg);
+  background: linear-gradient(135deg, #f59e0b, #dc2626);
+  color: white;
+  text-align: center;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  padding: 0.32rem 0;
+  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.22);
+}
+
+.deal-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background: #ffffff;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.deal-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(34, 211, 238, 0.75);
+  box-shadow: 0 26px 58px rgba(15, 23, 42, 0.13);
+}
+
+.deal-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.62) 45%, transparent 68%);
+  transform: translateX(-120%);
+  transition: transform 0.65s ease;
+}
+
+.deal-card:hover::after {
+  transform: translateX(120%);
+}
+
+.stat-stack {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.stat-chip {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(203, 213, 225, 0.82);
+  background: rgba(255, 255, 255, 0.84);
+  padding: 1rem;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+.stat-chip strong {
+  display: block;
+  color: #0f172a;
+  font-size: 1.35rem;
+  line-height: 1;
+  font-weight: 900;
+}
+
+.stat-chip span {
+  display: block;
+  margin-top: 0.35rem;
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.category-icon-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 8.5rem;
+  border-radius: 0.85rem;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background:
+    radial-gradient(circle at 90% 15%, rgba(34, 211, 238, 0.22), transparent 35%),
+    linear-gradient(135deg, #ffffff, #f8fafc);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+
+.category-icon-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: #67e8f9;
+}
+
+.category-icon-card::before {
+  content: "";
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  right: -1.6rem;
+  bottom: -1.6rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(14, 116, 144, 0.18), rgba(245, 158, 11, 0.2));
+}
+
+.live-dot {
+  display: inline-flex;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+  animation: livePulse 1.8s infinite;
+}
+
+.checkout-panel {
+  border-radius: 1rem;
+  border: 1px solid rgba(203, 213, 225, 0.85);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(236, 254, 255, 0.82)),
+    radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.12), transparent 22rem);
+  box-shadow: 0 22px 60px rgba(15, 23, 42, 0.11);
+}
+
+.input-lift {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.input-lift:focus {
+  transform: translateY(-1px);
+  border-color: #06b6d4 !important;
+  box-shadow: 0 0 0 4px rgba(103, 232, 249, 0.22);
+}
+
+.magnetic-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.magnetic-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+  transform: translateX(-120%);
+  transition: transform 0.5s ease;
+}
+
+.magnetic-button:hover::before {
+  transform: translateX(120%);
+}
+
+.hero-glass-card {
+  position: relative;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.14);
+  backdrop-filter: blur(20px);
+}
+
+.hero-glass-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.45), rgba(245, 158, 11, 0.22));
+  opacity: 0.7;
+}
+
+.brand-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.brand-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.18em;
+  height: 0.18em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #06b6d4, #f59e0b);
+}
+
+.marquee-strip {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 12%, black 88%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  min-width: max-content;
+  gap: 1rem;
+  animation: marqueeMove 18s linear infinite;
+}
+
+.marquee-item {
+  border-radius: 999px;
+  border: 1px solid rgba(203, 213, 225, 0.8);
+  background: rgba(255, 255, 255, 0.82);
+  padding: 0.55rem 0.9rem;
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 800;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+}
+
+@keyframes livePulse {
+  70% {
+    box-shadow: 0 0 0 9px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@keyframes marqueeMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
